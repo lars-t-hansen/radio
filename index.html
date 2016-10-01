@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Radio &pi;</title>
+    <script src="controls.js"></script>
+    <style>
+      .control { width: 30% }
+    </style>
+  </head>
+
+  <!-- Must have (once what we have is working):
+
+       Get rid of previous/next and instead make each playlist element
+       clickable and the playlist properly scrollable.
+
+       Maybe display the current track under the controls, not over,
+       with a line below it or somesuch.
+
+       Extra credit:
+
+       The currently playing song might be displayed in the middle of
+       that list and boldfaced, so that we can get rid of the status
+       line, leaving only controls and playlist.
+
+       If scrolling moves the current song out of the middle there
+       should be some way to get it back, either by a timeout (30s w/o
+       activity scrolls us back) or by some action.
+
+       There should be some interactive way of adding channels, don't
+       know how...  maybe a different page altogether, since that's a
+       desktop form factor.  -->
+
+  <body onload="setup()">
+    <span id=txt_current></span><br>
+    <center>
+      <button id=btn_down class=control type=button onclick="down()">Vol -</button>
+      <button id=btn_power class=control type=button onclick="power()">Power</button>
+      <button id=btn_up    class=control type=button onclick="up()">Vol +</button>
+      <br>
+      <button id=btn_previous class=control type=button onclick="previous()">Previous</button>
+      <button id=btn_next     class=control type=button onclick="next()">Next</button>
+    </center>
+    <div id=playlist></div>
+  </body>
+</html>
